@@ -7,6 +7,7 @@ Flask-Bootstrap
 Flask-CKEditor
 Flask-SQLAlchemy
 Flask-WTF
+gunicorn==20.1.0
 idna==2.10
 itsdangerous
 Jinja2

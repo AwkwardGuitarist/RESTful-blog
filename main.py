@@ -7,11 +7,13 @@ from wtforms.validators import DataRequired, URL
 from flask_ckeditor import CKEditor, CKEditorField
 from datetime import datetime as dt
 import bleach
+import os
+from dotenv import load_dotenv
 
-DNE = "Post does not exist."
-
+load_dotenv()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+DNE = os.environ["DNE"]
+app.config['SECRET_KEY'] = os.environ["SECRET_KEY"]
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
@@ -140,4 +142,3 @@ def delete_post(index):
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
-    
